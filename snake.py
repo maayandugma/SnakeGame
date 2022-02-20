@@ -62,7 +62,12 @@ class Snake:
             self.segments[0].setheading(RIGHT)
 
 
-
+    def reset(self):
+        for seg in self.segments: #after the player lost the snake move out of screen
+            seg.goto(1000,1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
 
 
 
